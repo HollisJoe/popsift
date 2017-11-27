@@ -14,7 +14,7 @@
  * that is much faster in CUDA.
  * Retaining old code for comparative speed testing.
  */
-#define USE_GAUSSIAN_ELIMINATION
+#undef USE_GAUSSIAN_ELIMINATION
 
 #include <cuda_runtime.h>
 #include <stdio.h>
