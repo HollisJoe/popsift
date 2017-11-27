@@ -14,7 +14,7 @@
  * that is much faster in CUDA.
  * Retaining old code for comparative speed testing.
  */
-#undef USE_GAUSSIAN_ELIMINATION
+#define USE_GAUSSIAN_ELIMINATION
 
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -89,7 +89,7 @@ inline bool solve( float i[3][3], float3& b )
 __device__
 inline bool solve( float A[3][3], float3& B )
 {
-    float b[3] = { B[0], B[1], B[2] },
+    float b[3] = { B.x, B.y, B.z };
 
     // Gauss elimination
     for( int j = 0 ; j < 3 ; j++ ) {
